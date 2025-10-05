@@ -28,7 +28,7 @@ export default function HomePageClient() {
 	const [currentStateBoard, setCurrentStateBoard] = useState(new Board());
 	return (
 		<div>
-			
+			<Image width={50} height={50} src='/knight.png' alt='knight'/>
 			<ul className='grid grid-cols-8 border grid-rows-8 shadow shadow-neutral-400'>
 				{currentStateBoard.fields.map((cell, i) =>
 					cell.map((figure, j) => {
