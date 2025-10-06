@@ -3,15 +3,20 @@ import { IconType } from 'react-icons';
 
 export default function Cell({
 	group = 'even',
-	figure,
+	cell,
 }: {
 	group: 'even' | 'odd';
-	figure: IconType | null;
+	cell: { id: string; figure: { id: null; icon: IconType | null } };
 }) {
-	const Icon = figure;
+	const Icon = cell.figure.icon;
 	return (
-		<li className={clsx('h-15 w-15 flex items-center justify-center', group === 'even' ? 'bg-dark-cell' : 'bg-light-cell')}>
-			{Icon && <Icon size={30}  fill='black'/>}
+		<li
+			className={clsx(
+				'flex h-15 w-15 items-center justify-center',
+				group === 'even' ? 'bg-dark-cell' : 'bg-light-cell'
+			)}
+		>
+			{Icon && <Icon size={30} fill='black' onClick={() => {}} />}
 		</li>
 	);
 }
