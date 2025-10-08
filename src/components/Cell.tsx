@@ -10,11 +10,11 @@ import {
 	FaChessRook,
 } from 'react-icons/fa6';
 
-import { figureMove } from '@/store/slices/boardSlice';
+import { addMarkMove, figureMove } from '@/store/slices/boardSlice';
 
-import { useAppDispatch, useAppSelector } from '@/hooks/redux';
+import { useAppDispatch } from '@/hooks/redux';
 
-import { ICellProps, TFigure } from '@/types/global.types';
+import { ICellProps } from '@/types/global.types';
 
 export const iconArr = [
 	{ type: 'pawn', icon: FaChessPawn },
@@ -32,7 +32,6 @@ export default function Cell({
 }: ICellProps) {
 	const Icon = iconArr.find(item => item.type === cell.figure.type);
 	const dispatch = useAppDispatch();
-	const isActive = activeFigure?.id === cell.figure.id ? 'red' : 'black';
 
 	return (
 		<li
@@ -41,19 +40,20 @@ export default function Cell({
 				colorCell === 'even' ? 'bg-dark-cell' : 'bg-light-cell'
 			)}
 		>
-			{Icon && (
+			{/* TODO: анимация с помошью framer по увеличению маштаба */}
+			{cell.markMove && (
 				<div
-					className={clsx(
-						activeFigure?.id === cell.figure.id && 'text-red-500',
-						cell.figure.color === 'white' && 'text-white',
-						cell.figure.color === 'black' && 'text-black'
-					)}
-				>
+					className='bg-success ring-success h-4 w-4 rounded-full ring-2 ring-offset-2'
+					onClick={() => dispatch(figureMove(cell.figure.id))}
+				/>
+			)}
+			{Icon && (
+				<div className={clsx(cell.figure.color === 'white' ? 'text-white' : 'text-black', activeFigure?.id === cell.figure.id && 'mb-3')}>
 					<Icon.icon
 						size={30}
 						onClick={() => {
 							setActiveFigure(cell.figure);
-							dispatch(figureMove(cell.figure.id as string));
+							dispatch(addMarkMove(cell.figure.id));
 						}}
 					/>
 				</div>
