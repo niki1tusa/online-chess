@@ -1,3 +1,7 @@
+'use client';
+
+import { toast } from 'react-toastify';
+
 const SIDEBAR_DATA = [
 	{ id: 1, title: 'Tutorial' },
 	{ id: 2, title: 'Online' },
@@ -14,6 +18,9 @@ export default function Sidebar() {
 					{item.title}
 				</div>
 			))}
+			<button className='max-w-[200px] rounded border p-2' onClick={() => toast.info('Hi')}>
+				click me
+			</button>
 		</nav>
 	);
 }

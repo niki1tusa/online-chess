@@ -4,11 +4,13 @@ import Sidebar from '@/components/Sidebar';
 export default function Home() {
 	return (
 		<div className='grid grid-cols-3 '>
-			<Sidebar />
+			<div/>
+			{/* <Sidebar /> */}
 			<HomePageClient />
-			<div>
+			{/* <div className='flex flex-col items-center'>
 				<p>Statistic</p>
-			</div>
+			</div> */}
+			<div/>
 		</div>
 	);
 }

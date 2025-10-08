@@ -1,9 +1,11 @@
-import { configureStore } from '@reduxjs/toolkit'
-import { activeFigureSlice } from './slices/activeSlice'
+import { configureStore } from '@reduxjs/toolkit';
+
+
+import currentBoardReducer from './slices/boardSlice';
 
 export const store = configureStore({
-  reducer: {activeFigure: activeFigureSlice},
-})
+	reducer: {  currentBoard: currentBoardReducer },
+});
 
-export type RootState = ReturnType<typeof store.getState>
-export type AppDispatch = typeof store.dispatch
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
