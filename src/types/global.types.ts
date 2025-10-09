@@ -1,11 +1,11 @@
 export type TFigure = {
-	id: null;
-	type: 'pawn' | 'king' | 'queen' | 'knight' | 'rook' | 'bishop' | null;
-    color: 'white' | 'black'
+	id: string;
+	type: 'pawn' | 'king' | 'queen' | 'knight' | 'rook' | 'bishop' ;
+    color: 'white' | 'black' 
 };
 export interface ICell {
 	id: string;
-	figure: TFigure;
+	figure: TFigure | null;
     markMove: boolean
 }
 export interface ICellProps {

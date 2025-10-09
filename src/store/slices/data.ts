@@ -1,6 +1,8 @@
-export const FIELDS = [
+import { ICell } from "@/types/global.types";
+
+export const FIELDS: ICell[][] = [
   // 8 (чёрные основные)
-  [
+   [
     { id: '8a', figure: { id: 'bR1', type: 'rook',   color: 'black' }, markMove: false },
     { id: '8b', figure: { id: 'bN1', type: 'knight', color: 'black' }, markMove: false },
     { id: '8c', figure: { id: 'bB1', type: 'bishop', color: 'black' }, markMove: false },
@@ -23,47 +25,47 @@ export const FIELDS = [
   ],
   // 6
   [
-    { id: '6a', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '6b', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '6c', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '6d', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '6e', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '6f', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '6g', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '6h', figure: { id: null, type: null, color: null }, markMove: false },
+    { id: '6a', figure: null, markMove: false },
+    { id: '6b', figure: null, markMove: false },
+    { id: '6c', figure: null, markMove: false },
+    { id: '6d', figure: null, markMove: false },
+    { id: '6e', figure: null, markMove: false },
+    { id: '6f', figure: null, markMove: false },
+    { id: '6g', figure: null, markMove: false },
+    { id: '6h', figure: null, markMove: false },
   ],
   // 5
   [
-    { id: '5a', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '5b', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '5c', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '5d', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '5e', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '5f', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '5g', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '5h', figure: { id: null, type: null, color: null }, markMove: false },
+    { id: '5a', figure: null, markMove: false },
+    { id: '5b', figure: null, markMove: false },
+    { id: '5c', figure: null, markMove: false },
+    { id: '5d', figure: null, markMove: false },
+    { id: '5e', figure: null, markMove: false },
+    { id: '5f', figure: null, markMove: false },
+    { id: '5g', figure: null, markMove: false },
+    { id: '5h', figure: null, markMove: false },
   ],
   // 4
   [
-    { id: '4a', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '4b', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '4c', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '4d', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '4e', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '4f', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '4g', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '4h', figure: { id: null, type: null, color: null }, markMove: false },
+    { id: '4a', figure: null, markMove: false },
+    { id: '4b', figure: null, markMove: false },
+    { id: '4c', figure: null, markMove: false },
+    { id: '4d', figure: null, markMove: false },
+    { id: '4e', figure: null, markMove: false },
+    { id: '4f', figure: null, markMove: false },
+    { id: '4g', figure: null, markMove: false },
+    { id: '4h', figure: null, markMove: false },
   ],
   // 3
   [
-    { id: '3a', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '3b', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '3c', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '3d', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '3e', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '3f', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '3g', figure: { id: null, type: null, color: null }, markMove: false },
-    { id: '3h', figure: { id: null, type: null, color: null }, markMove: false },
+    { id: '3a', figure: null, markMove: false },
+    { id: '3b', figure: null, markMove: false },
+    { id: '3c', figure: null, markMove: false },
+    { id: '3d', figure: null, markMove: false },
+    { id: '3e', figure: null, markMove: false },
+    { id: '3f', figure: null, markMove: false },
+    { id: '3g', figure: null, markMove: false },
+    { id: '3h', figure: null, markMove: false },
   ],
   // 2 (белые пешки)
   [
