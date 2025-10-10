@@ -12,5 +12,5 @@ export interface ICellProps {
 	colorCell: 'even' | 'odd';
 	cell: ICell;
 	activeFigure: TFigure | null;
-	setActiveFigure: (arg: TFigure) => void;
+	setActiveFigure: (arg: TFigure | null) => void;
 }

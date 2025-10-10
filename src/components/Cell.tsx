@@ -1,6 +1,7 @@
 'use client';
 
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import {
 	FaChessBishop,
 	FaChessKing,
@@ -30,9 +31,9 @@ export default function Cell({
 	activeFigure,
 	setActiveFigure,
 }: ICellProps) {
-	const Icon = iconArr.find(item => item.type === cell.figure.type);
+	const Icon = iconArr.find(item => item.type === cell.figure?.type);
 	const dispatch = useAppDispatch();
-
+	const isActive = activeFigure?.id === cell.id
 	return (
 		<li
 			className={clsx(
@@ -41,22 +42,27 @@ export default function Cell({
 			)}
 		>
 			{/* TODO: анимация с помошью framer по увеличению маштаба */}
-			{cell.markMove && (
+			{cell.markMove && cell.figure && (
 				<div
-					className='bg-success ring-success h-4 w-4 rounded-full ring-2 ring-offset-2'
+					className='bg-success ring-success h-4 w-4 cursor-pointer rounded-full ring-2 ring-offset-2'
 					onClick={() => dispatch(figureMove(cell.figure.id))}
 				/>
 			)}
 			{Icon && (
-				<div className={clsx(cell.figure.color === 'white' ? 'text-white' : 'text-black', activeFigure?.id === cell.figure.id && 'mb-3')}>
+				<motion.div
+					animate={isActive ? { scale: 1.25 } : { scale: 1 }}
+					transition={{ type: 'spring', stiffness: 250, damping: 15 }}
+					className={clsx(cell.figure?.color === 'white' ? 'text-white' : 'text-black')}
+				>
 					<Icon.icon
 						size={30}
 						onClick={() => {
+							if (!cell.figure) return null;
 							setActiveFigure(cell.figure);
-							dispatch(addMarkMove(cell.figure.id));
+							dispatch(addMarkMove(cell.figure?.id));
 						}}
 					/>
-				</div>
+				</motion.div>
 			)}
 		</li>
 	);
